@@ -6,9 +6,9 @@ class Player
     puts "数字を入力してください。"
     puts "0:グー, 1:チョキ, 2:パー"
 
-    while input_hand = gets.to_i
-      if [0, 1, 2].include?(input_hand)
-        return input_hand
+    while input_hand = gets.chomp
+      if ["0", "1", "2"].include?(input_hand)
+        return input_hand.to_i
       else
         puts "数字を入力してください。"
         puts "0:グー, 1:チョキ, 2:パー"
@@ -42,9 +42,6 @@ class Janken
   def pon(player_hand, enemy_hand)
     # 変数「janken」に["グー", "チョキ", "パー"]を代入します。
     janken = ["グー", "チョキ", "パー"]
-    #           0       1       2
-    # 0 1, 1 2, 2 0
-    # 0 2, 1 0, 2 1
     #「相手の手は#{敵の生成した値}です。」と出力させます。
     puts "相手の手は#{janken[enemy_hand]}です。"
 
